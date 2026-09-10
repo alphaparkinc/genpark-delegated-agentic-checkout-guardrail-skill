@@ -1,0 +1,48 @@
+{
+  "name": "genpark-delegated-agentic-checkout-guardrail-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Autonomous merchant checkout guardrail evaluating single-use delegated tokens, merchant MCC locks, and velocity limits.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "agentic-commerce",
+  "tags": [
+    "agentcard",
+    "agentic-checkout",
+    "payment-guardrails",
+    "spending-velocity",
+    "delegated-tokens"
+  ],
+  "inputs": {
+    "merchant_domain": {
+      "type": "string",
+      "default": "api.anthropic.com"
+    },
+    "purchase_amount_usd": {
+      "type": "number",
+      "default": 42.5
+    },
+    "max_budget_usd": {
+      "type": "number",
+      "default": 100.0
+    }
+  },
+  "outputs": {
+    "guardrail_id": {
+      "type": "string"
+    },
+    "guardrail_verdict": {
+      "type": "string"
+    },
+    "remaining_velocity_budget_usd": {
+      "type": "number"
+    },
+    "ephemeral_token_bound": {
+      "type": "boolean"
+    },
+    "audit_receipt_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
